@@ -1,8 +1,11 @@
 DEFINT A-Z
 
 GOSUB loadnotes
+
+mainloop:
 GOSUB selectnote
-END
+GOSUB displaynote
+GOTO mainloop
 
 loadnotes:
 OPEN "NOTES.DAT" FOR INPUT AS #1
@@ -23,13 +26,26 @@ CLOSE #1
 RETURN
 
 selectnote:
-CLS
-PRINT "Notes:" + CHR$(13)
+PRINT CHR$(13) + "Notes:" + CHR$(13)
 FOR i = 1 TO notescnt
     PRINT i; "- " + notes$(i, 1)
 NEXT i
 PRINT
-INPUT "Select note from list"; note
-PRINT note
+INPUT "Select note from list (0 to exit)"; note
+IF note = 0 THEN
+    END
+END IF
+IF note > notescnt THEN
+    PRINT CHR$(13) + "Invalid note, press any key to try again"
+    a$ = ""
+    WHILE a$ = "": a$ = UCASE$(INKEY$): WEND
+    CLS
+    GOTO selectnote
+END IF
 RETURN
 
+displaynote:
+CLS
+PRINT "Note: " + notes$(note, 1) + CHR$(13)
+PRINT notes$(note, 2)
+RETURN
