@@ -1,6 +1,6 @@
 # Notes App
 
-> Written in glorious QuickBASIC
+> Written in glorious QuickBASIC (64 bit!)
 
 ## How do I run it?
 
