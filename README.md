@@ -8,4 +8,4 @@ Features:
 1. List notes
 1. View notes
 
-Thats it!  As that was the only requirements ;)
+Thats it!  As those were the only requirements ;)
