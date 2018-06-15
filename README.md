@@ -15,3 +15,9 @@
 Thats it!  As those were the only requirements ;)
 
 ![requrements](challenge.png "Challenge requirements")
+
+## Future Enhancements
+
+1. Edit notes
+1. Add new notes
+1. Delete notes
